@@ -31,6 +31,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkVirtualScrollViewport} from "@angular/cdk/scrolling";
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatExpansionModule
     
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
