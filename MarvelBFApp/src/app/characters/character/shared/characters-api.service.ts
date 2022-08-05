@@ -6,10 +6,15 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class CharactersApiService {
-  KEY_PUBLIC='8f6120ce481405e253289d8cf23b2b22';
-  KEY_PRIVATE='d80b3f48527e0e3d068eab1f75a13d4132a343a6'
-  // 1d80b3f48527e0e3d068eab1f75a13d4132a343a68f6120ce481405e253289d8cf23b2b22
-  HASH='8d893590c2e147be85c5841a8b19d9a6';
+  
+  KEY_PUBLIC='b89f628fb69a529a5a336c2521df8fec';
+  KEY_PRIVATE='7d4db55b74ec34de55396236faa4a792b3674851'
+  // 17d4db55b74ec34de55396236faa4a792b3674851b89f628fb69a529a5a336c2521df8fec
+  HASH='cc86ba33514a93b7ef86fe55b177fab0';
+  // KEY_PUBLIC='8f6120ce481405e253289d8cf23b2b22';
+  // KEY_PRIVATE='d80b3f48527e0e3d068eab1f75a13d4132a343a6'
+  // // 1d80b3f48527e0e3d068eab1f75a13d4132a343a68f6120ce481405e253289d8cf23b2b22
+  // HASH='8d893590c2e147be85c5841a8b19d9a6';
   URL=`https://gateway.marvel.com:443/v1/public/characters`;
 
  
