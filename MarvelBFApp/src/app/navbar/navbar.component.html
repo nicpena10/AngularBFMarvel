@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="primary">Menu</mat-toolbar>   
+    <mat-toolbar-row *ngIf="(isHandset$ | async) === false">
+      <span routerLink="/home">Home</span>
+      <mat-icon class="example-icon" aria-hidden="false" routerLink="/home" aria-label="Example user home icon"  fontIcon="home">Home</mat-icon>
+      
+    </mat-toolbar-row>   
+    <mat-toolbar-row *ngIf="(isHandset$ | async) === false">
+      <span routerLink="/busqueda">Busqueda</span>      
+      <mat-icon class="example-icon" aria-hidden="false" routerLink="/busqueda" aria-label="Example user verified icon">find_replace</mat-icon>
+    </mat-toolbar-row>   
+    <mat-toolbar-row *ngIf="(isHandset$ | async) === true">
+      <mat-icon class="example-icon" aria-hidden="false" routerLink="/home" aria-label="Example user home icon"  fontIcon="home">Home</mat-icon>
+      
+    </mat-toolbar-row>   
+    <mat-toolbar-row *ngIf="(isHandset$ | async) === true">
+        <mat-icon class="example-icon" aria-hidden="false" routerLink="/busqueda" aria-label="Example user verified icon">find_replace</mat-icon>
+    </mat-toolbar-row>   
+  </mat-sidenav>
+
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">...</mat-icon>
+      </button>
+      <span>MarvelBFApp</span>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <!-- <filtroForm></filtroForm> -->
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

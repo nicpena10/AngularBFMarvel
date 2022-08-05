@@ -1,0 +1,3 @@
+<div fxLayout="column" *ngFor="let historia of allhistoria | async">
+    <button mat-flat-button matTooltip="{{historia.description}}" fxFlex  color="primary" style="margin: 1% !important;" >{{historia.title}} </button>
+</div>

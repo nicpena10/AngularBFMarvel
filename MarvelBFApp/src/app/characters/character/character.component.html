@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-title>
+    {{character.name}}
+  </mat-card-title>
+    <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">    
+    <mat-accordion>     
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Listado de Comic
+            </mat-panel-title>
+            <mat-panel-description>
+              Is {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-comics [characterid]="character.id"></app-comics> 
+        </mat-expansion-panel>
+      </mat-accordion>
+      
+     <!-- <app-comics [characterid]="character.id"></app-comics> -->    
+    <mat-accordion>     
+      <mat-expansion-panel (opened)="panelOpenState2 = true"
+                           (closed)="panelOpenState2 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Listado de Series
+          </mat-panel-title>
+          <mat-panel-description>
+            Is {{panelOpenState2 ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-series [characterid]="character.id"></app-series>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <mat-accordion>     
+      <mat-expansion-panel (opened)="panelOpenState3 = true"
+                           (closed)="panelOpenState3 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Listado de Historias
+          </mat-panel-title>
+          <mat-panel-description>
+            Is {{panelOpenState3 ? 'open' : 'closed'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-historias [characterid]="character.id"></app-historias>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <mat-card-footer>
+      <a href="{{character.urls[0].url}}" target="_blank" fxFlex mat-flat-button color="primary">
+        Mas Detalles
+      </a>
+    </mat-card-footer> 
+  </mat-card>

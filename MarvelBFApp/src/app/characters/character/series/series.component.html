@@ -1,0 +1,3 @@
+<div fxLayout="column" *ngFor="let serie of allseries | async">
+    <a href="{{serie.urls[0].url}}" matTooltip="{{serie.description}}" target="_blank" fxFlex mat-flat-button color="primary" style="margin: 1% !important;" >{{serie.title}} </a>
+</div>
