@@ -23,3 +23,9 @@
 cdk-virtual-scroll-viewport{
     min-height: 100%;    
 }
+::ng-deep.cdk-virtual-scroll-content-wrapper{
+    width: 100% !important;
+  }
+  .fff{
+    padding: 20px;margin: 1px;
+  }

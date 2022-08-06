@@ -27,19 +27,7 @@ export class CharactersApiService {
     return this.http.get<any>(this.Url_final)
                     .pipe(map((data :any) => data.data.results))
   }
-  getTodosv2(): Observable<any>{
-    this.Url_final=this.URL + `?ts=1&apikey=${this.KEY_PUBLIC}&hash=${this.HASH}`;
-    return this.http.get<any>(this.Url_final)
-                    .pipe(map((data :any) => data.data.results))
-  }
   
-  
-  // getbyname(): Observable<any>{
-  //   this.Url_final=this.URL + `name=Abyss&ts=1&apikey=${this.KEY_PUBLIC}&hash=${this.HASH}`;  
-    
-  //   return this.http.get<any>(this.Url_final)
-  //   .pipe(map((data :any) => data.data.results));
-  // }
   getbyname(name:string): Observable<any>{
     
     this.Url_final=this.URL + `?${name}&ts=1&apikey=${this.KEY_PUBLIC}&hash=${this.HASH}`;      

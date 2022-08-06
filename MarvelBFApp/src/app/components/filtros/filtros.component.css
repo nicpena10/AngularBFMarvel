@@ -40,21 +40,38 @@
     font: 95% Arial, Helvetica, sans-serif;
    }
    .btn-send {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     padding: 1%;
-    background: #43d1af;
-    border-bottom: 2px solid #30c29e;
+    background: #F0141E;
+    border-bottom: 2px solid #F0141E;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
     color: #fff;
-    font-size: 15px;    
+    font-size: 1.6rem;
   }
   .contenedor {
-    display: flex;
+    display: flex;   
+    background: url(https://i.annihil.us/u/prod/marvel/i/mg/8/e0/52bdf830aa094.jpg) no-repeat center center #0a1117;
+    height: 50%;
     flex-direction: column;
     margin:1rem auto;
-    max-width: 600px;
+    max-width: 100%;
 }  
+.mat-focused {
+  color: white !important;
+}
+.buscapersonaje{
+  color: #F0141E;
+  font-size: 1.80rem;  
+  font-family: "RobotoCondensed Bold", sans-serif;
+  background: #FFF !important;
+  margin: 0 !important;
+}
+.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper{
+  width: 100%;
+}
+::ng-deep.cdk-virtual-scroll-content-wrapper{
+  width: 100% !important;
+}

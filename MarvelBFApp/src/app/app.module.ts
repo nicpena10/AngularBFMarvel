@@ -32,6 +32,7 @@ import {CdkVirtualScrollViewport} from "@angular/cdk/scrolling";
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     InfiniteScrollModule,
     ScrollingModule,
     CdkAccordionModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule
     
   ],
   providers: [

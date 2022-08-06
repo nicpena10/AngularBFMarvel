@@ -1,35 +1,38 @@
 <div class="contenedor">
-    <h1>Busca tu personaje Marvel</h1>
-    <form [formGroup]="filtroform" (ngSubmit)="getCharcterbyname()">
-        <mat-form-field>
+    <h1 class="buscapersonaje">Busca tu personaje Marvel</h1>
+    <form [formGroup]="filtroform" (ngSubmit)="validabuscar()">
+        <mat-form-field style="font-size: 1.80rem;width: 50%;">
             <input matInput type="text" formControlName="Nombre" placeholder="Filtro por Nombre">
+            <mat-error *ngIf="hasError('Nombre', 'required')">Debe ingresar Nombre</mat-error>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field style="font-size: 1.80rem;width: 50%;">
             <input matInput type="text" formControlName="Iniciales" placeholder="Filtro por Inciales">
+            <mat-error *ngIf="hasError('Iniciales', 'required')">Debe ingresar iniciales</mat-error>
         </mat-form-field>
     
-        <!-- <br>
-        <label>Filtro por Series</label>
-        <input type="text" formControlName="Series" placeholder="">
-        <br>
-        <label>Filtro por Comic</label>
-        <input type="text" formControlName="Comic" placeholder=""> -->
         <button type="submit" class="btn-send">Filtrar</button>
 
     </form>
 </div>
 <br>
-<div class="form-continer">
+<div class="form-continers">
     <div fxFlex fxLayout="column">
-        <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;">
-            <div fxLayout="row wrap">
+        <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;width: 100%;">
+            <div fxLayout="row wrap"  style="width: 100%!important;">
                 <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character of allcharacters | async"
-              style="padding: 5px;">
+              style="padding: 2px;width: 100%!important;">
         
-              <app-character [character]="character"></app-character>
+              <app-character [character]="character" style="width: 80%!important;"></app-character>
             </div>
             </div>
         </cdk-virtual-scroll-viewport>
     </div>
 </div>
+<ng-template #errordialog>
+    <h2 matDialogTitle>Error!</h2>
+    <p matDialogContent><em>Debe ingresar valor en campos requeridos</em></p>
+    <mat-dialog-actions align="end">
+      <button mat-button  color="warn" matDialogClose>OK</button>
+    </mat-dialog-actions>
+  </ng-template>

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card style="background-color: #151515 !important;color:white;width: 100%;">
   <mat-card-title>
     {{character.name}}
   </mat-card-title>
@@ -11,7 +11,7 @@
               Listado de Comic
             </mat-panel-title>
             <mat-panel-description>
-              Is {{panelOpenState ? 'open' : 'closed'}}
+              <!-- Is {{panelOpenState ? 'open' : 'closed'}} -->
             </mat-panel-description>
           </mat-expansion-panel-header>
           <app-comics [characterid]="character.id"></app-comics> 
@@ -27,7 +27,7 @@
             Listado de Series
           </mat-panel-title>
           <mat-panel-description>
-            Is {{panelOpenState2 ? 'open' : 'closed'}}
+            <!-- Is {{panelOpenState2 ? 'open' : 'closed'}} -->
           </mat-panel-description>
         </mat-expansion-panel-header>
         <app-series [characterid]="character.id"></app-series>
@@ -42,15 +42,15 @@
             Listado de Historias
           </mat-panel-title>
           <mat-panel-description>
-            Is {{panelOpenState3 ? 'open' : 'closed'}}
+            <!-- Is {{panelOpenState3 ? 'open' : 'closed'}} -->
           </mat-panel-description>
         </mat-expansion-panel-header>
         <app-historias [characterid]="character.id"></app-historias>
       </mat-expansion-panel>
     </mat-accordion>
     
-    <mat-card-footer>
-      <a href="{{character.urls[0].url}}" target="_blank" fxFlex mat-flat-button color="primary">
+    <mat-card-footer class="btn-send-more" style="margin-top: 12px;">
+      <a href="{{character.urls[0].url}}" target="_blank" fxFlex mat-flat-button class="btn-send-more-dentro">
         Mas Detalles
       </a>
     </mat-card-footer> 

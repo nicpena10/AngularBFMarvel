@@ -1,3 +1,3 @@
 <div fxLayout="column" *ngFor="let comic of allcomics | async">
-    <a href="{{comic.urls[0].url}}" matTooltip="{{comic.description}}" target="_blank" fxFlex mat-flat-button color="primary" style="margin: 1% !important;" >{{comic.title}} </a>
+    <a href="{{comic.urls[0].url}}" matTooltip="{{comic.description}}" target="_blank" fxFlex mat-flat-button class="boton-comic" style="margin: 1% !important;" >{{comic.title}} </a>
 </div>

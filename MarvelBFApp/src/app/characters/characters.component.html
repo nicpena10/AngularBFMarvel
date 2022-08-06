@@ -1,28 +1,10 @@
 
 <div fxFlex fxLayout="column">
-    <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;">
+    <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;width: 100%;">
         <div fxLayout="row wrap">           
-                <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character of allcharacters | async"  style="padding: 5px;">
+                <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character of allcharacters | async" class="fff" >
                     <app-character [character]="character"></app-character>     
                   </div>
         </div>
     </cdk-virtual-scroll-viewport>
     </div>
-
-<!-- <p *ngFor="let p of allcharacters|async">
-    {{p.thumbnail.path|json}}
-</p> -->
-<!-- "{{p.thumbnail.path}}.{{p.thumbnail.extension}}" -->
-  <!--<cdk-virtual-scroll-viewport itemSize="3">
-   <div fxFlex fxLayout="column">
-        <div fxLayout="row wrap">
-         <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *cdkVirtualFor="let character of dataSource"  style="padding: 5px;">
-          
-        </div>
-        </div>
-    </div>
-    <div *cdkVirtualFor="let character of dataSource">
-        <app-character [character]="character"></app-character>     
-    </div>
-    
-</cdk-virtual-scroll-viewport> -->

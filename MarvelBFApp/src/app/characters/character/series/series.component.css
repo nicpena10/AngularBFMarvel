@@ -1,0 +1,12 @@
+.boton-series{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1%;
+    background: #F0141E;
+    border-bottom: 2px solid #F0141E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    font-size: 16px;
+  }
