@@ -1,10 +1,23 @@
 
-<div fxFlex fxLayout="column">
-    <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;width: 100%;">
-        <div fxLayout="row wrap">           
-                <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character of allcharacters | async" class="fff" >
-                    <app-character [character]="character"></app-character>     
-                  </div>
+<div class="container" style="margin-top: 1%;">
+    <div clas="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Busqueda Rapida..." name="filterpost" [(ngModel)]="filterpost"> 
+            </div>
         </div>
-    </cdk-virtual-scroll-viewport>
     </div>
+    <div class="row">   
+        <div class="col">
+            <div fxFlex fxLayout="column">
+                <cdk-virtual-scroll-viewport scrollWindow itemSize="20" style="height: 100%;width: 100%;">
+                    <div fxLayout="row wrap">           
+                        <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character of allcharacters | async | filter:filterpost" class="fff" >
+                            <app-character [character]="character"></app-character>     
+                        </div>
+                    </div>
+                </cdk-virtual-scroll-viewport>
+            </div>
+        </div>        
+    </div>
+</div>

@@ -9,7 +9,7 @@ import { CharactersApiService } from './character/shared/characters-api.service'
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-   
+  filterpost= '';
   constructor(private charactarsvc: CharactersApiService) { 
    
   }

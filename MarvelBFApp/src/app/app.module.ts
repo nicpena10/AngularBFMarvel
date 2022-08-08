@@ -33,6 +33,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import {MatDialogModule } from '@angular/material/dialog';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import {MatDialogModule } from '@angular/material/dialog';
     FiltrosComponent,
     ComicsComponent,
     SeriesComponent,
-    HistoriasComponent
+    HistoriasComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
